@@ -7,8 +7,6 @@ import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { LineChart, BarChart, PieChart, TrendingUp, ShieldCheck, Laptop, GraduationCap } from 'lucide-react'
-import { theme } from '@/lib/theme'
-import { cn } from "@/lib/utils"
 
 const skills = [
   {
@@ -69,17 +67,13 @@ const experiences = [
 export function Skills() {
   const [selectedCategory, setSelectedCategory] = useState("Financial Analysis")
 
-  const fadeIn = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
-  }
-
   return (
     <section id="skills" className="container py-24 md:py-32">
       <motion.h2 
-        className={cn("text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center", theme.typography.fontFamily.serif)}
-        {...fadeIn}
+        className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
       >
         Skills & Expertise
       </motion.h2>
@@ -92,8 +86,8 @@ export function Skills() {
         <TabsContent value="skills" className="mt-0">
           <Card>
             <CardHeader>
-              <CardTitle className={cn(theme.typography.fontSize['2xl'], theme.typography.fontFamily.sans)}>Professional Skills</CardTitle>
-              <CardDescription className={theme.typography.fontSize.base}>Comprehensive overview of my skill set and proficiency levels</CardDescription>
+              <CardTitle className="text-2xl font-semibold">Professional Skills</CardTitle>
+              <CardDescription className="text-base">Comprehensive overview of my skill set and proficiency levels</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-6">
@@ -119,8 +113,8 @@ export function Skills() {
                       transition={{ duration: 0.3, delay: index * 0.1 }}
                     >
                       <div className="flex justify-between">
-                        <span className={cn("font-medium", theme.typography.fontSize.sm)}>{skill.name}</span>
-                        <span className={cn("font-medium", theme.typography.fontSize.sm)}>{skill.proficiency}%</span>
+                        <span className="text-sm font-medium">{skill.name}</span>
+                        <span className="text-sm font-medium">{skill.proficiency}%</span>
                       </div>
                       <Progress value={skill.proficiency} className="h-2" />
                     </motion.div>
@@ -133,8 +127,8 @@ export function Skills() {
         <TabsContent value="courses" className="mt-0">
           <Card>
             <CardHeader>
-              <CardTitle className={cn(theme.typography.fontSize['2xl'], theme.typography.fontFamily.sans)}>Advanced Coursework</CardTitle>
-              <CardDescription className={theme.typography.fontSize.base}>Specialized finance courses from Masters in Finance program at ASU</CardDescription>
+              <CardTitle className="text-2xl font-semibold">Advanced Coursework</CardTitle>
+              <CardDescription className="text-base">Specialized finance courses from Masters in Finance program at ASU</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid gap-4 md:grid-cols-2">
@@ -147,7 +141,7 @@ export function Skills() {
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
                     <GraduationCap className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className={theme.typography.fontSize.base}>{course}</span>
+                    <span className="text-base">{course}</span>
                   </motion.div>
                 ))}
               </div>
@@ -157,8 +151,8 @@ export function Skills() {
         <TabsContent value="experience" className="mt-0">
           <Card>
             <CardHeader>
-              <CardTitle className={cn(theme.typography.fontSize['2xl'], theme.typography.fontFamily.sans)}>Real-World Applications</CardTitle>
-              <CardDescription className={theme.typography.fontSize.base}>Practical experience in applying financial knowledge</CardDescription>
+              <CardTitle className="text-2xl font-semibold">Real-World Applications</CardTitle>
+              <CardDescription className="text-base">Practical experience in applying financial knowledge</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -171,8 +165,8 @@ export function Skills() {
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
                     <exp.icon className="h-12 w-12 text-primary mb-2" />
-                    <h3 className={cn(theme.typography.fontSize.lg, theme.typography.fontFamily.sans, "font-semibold mb-2")}>{exp.name}</h3>
-                    <p className={cn(theme.typography.fontSize.sm, "text-muted-foreground")}>{exp.description}</p>
+                    <h3 className="text-lg font-semibold mb-2">{exp.name}</h3>
+                    <p className="text-sm text-muted-foreground">{exp.description}</p>
                   </motion.div>
                 ))}
               </div>
