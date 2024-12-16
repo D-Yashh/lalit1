@@ -102,8 +102,8 @@ export function Experience() {
               <CardHeader className="cursor-pointer p-4 sm:p-6" onClick={() => toggleExpand(index)}>
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                   <div>
-                    <CardTitle className={cn(theme.typography.fontSize['2xl'], theme.typography.fontFamily.sans)}>{exp.title}</CardTitle>
-                    <CardDescription className={theme.typography.fontSize.base}>
+                    <CardTitle className={cn("text-2xl font-semibold", theme.typography.fontFamily.sans)}>{exp.title}</CardTitle>
+                    <CardDescription>
                       <span className="flex items-center">
                         <Briefcase className="mr-2 h-4 w-4" />
                         {exp.company}
@@ -139,7 +139,7 @@ export function Experience() {
                         <TabsContent value="responsibilities">
                           <ul className="list-disc pl-5 space-y-1 mt-4">
                             {exp.responsibilities.map((resp, i) => (
-                              <li key={i} className={cn(theme.typography.fontSize.sm, "text-muted-foreground")}>{resp}</li>
+                              <li key={i} className="text-sm text-muted-foreground">{resp}</li>
                             ))}
                           </ul>
                         </TabsContent>
@@ -148,7 +148,7 @@ export function Experience() {
                             {exp.achievements.map((achievement, i) => (
                               <li key={i} className="flex items-start">
                                 <Badge variant="secondary" className="mr-2 mt-1">Achievement</Badge>
-                                <span className={theme.typography.fontSize.sm}>{achievement}</span>
+                                <span className="text-sm">{achievement}</span>
                               </li>
                             ))}
                           </ul>
