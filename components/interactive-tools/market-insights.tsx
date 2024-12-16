@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { AlertCircle } from 'lucide-react'
-import { theme } from "@/lib/theme"
 import { cn } from "@/lib/utils"
 
 // Mock market data
@@ -42,7 +41,7 @@ export function MarketInsights() {
     return (
       <Card>
         <CardHeader>
-          <Skeleton className="h-8 w-[250px]" /><Skeleton className="h-8 w-[250px]" />
+          <Skeleton className="h-8 w-[250px]" />
           <Skeleton className="h-4 w-[300px]" />
         </CardHeader>
         <CardContent>
@@ -65,8 +64,8 @@ export function MarketInsights() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className={cn(theme.typography.fontSize.xl, theme.typography.fontFamily.sans)}>Market Insights</CardTitle>
-        <CardDescription className={theme.typography.fontSize.base}>Interactive chart showing major index performance over time</CardDescription>
+        <CardTitle className="text-xl font-semibold">Market Insights</CardTitle>
+        <CardDescription className="text-sm">Interactive chart showing major index performance over time</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="h-[400px]">
@@ -83,7 +82,7 @@ export function MarketInsights() {
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <div className={cn(theme.typography.fontSize.sm, "mt-4 text-center text-muted-foreground")}>
+        <div className="mt-4 text-center text-sm text-muted-foreground">
           This chart shows mock data for illustrative purposes only. 
           Real-world applications would use live market data from financial APIs.
         </div>

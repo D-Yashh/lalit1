@@ -4,7 +4,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { Slider } from "@/components/ui/slider"
-import { theme } from "@/lib/theme"
 import { cn } from "@/lib/utils"
 
 export function InvestmentCalculator() {
@@ -27,13 +26,13 @@ export function InvestmentCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className={cn(theme.typography.fontSize.xl, theme.typography.fontFamily.sans)}>Investment Calculator</CardTitle>
-        <CardDescription className={theme.typography.fontSize.base}>Calculate the future value of your investment using compound interest</CardDescription>
+        <CardTitle className="text-xl font-semibold">Investment Calculator</CardTitle>
+        <CardDescription className="text-sm">Calculate the future value of your investment using compound interest</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid gap-4">
           <div className="grid gap-2">
-            <Label htmlFor="principal" className={theme.typography.fontSize.sm}>Initial Investment ($)</Label>
+            <Label htmlFor="principal" className="text-sm">Initial Investment ($)</Label>
             <Input
               id="principal"
               type="number"
@@ -43,7 +42,7 @@ export function InvestmentCalculator() {
             />
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="rate" className={theme.typography.fontSize.sm}>Annual Interest Rate (%)</Label>
+            <Label htmlFor="rate" className="text-sm">Annual Interest Rate (%)</Label>
             <Slider
               id="rate"
               min={0}
@@ -55,7 +54,7 @@ export function InvestmentCalculator() {
             <div className="text-right text-sm text-muted-foreground">{rate.toFixed(1)}%</div>
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="time" className={theme.typography.fontSize.sm}>Investment Period (Years)</Label>
+            <Label htmlFor="time" className="text-sm">Investment Period (Years)</Label>
             <Slider
               id="time"
               min={1}
@@ -70,9 +69,9 @@ export function InvestmentCalculator() {
           {error && <p className="text-red-500 text-sm">{error}</p>}
           {result > 0 && (
             <div className="text-center p-4 bg-muted rounded-lg">
-              <p className={cn(theme.typography.fontSize.lg, "font-semibold")}>Future Value:</p>
-              <p className={cn(theme.typography.fontSize['3xl'], "font-bold text-primary")}>${result.toLocaleString()}</p>
-              <p className={cn(theme.typography.fontSize.sm, "text-muted-foreground mt-2")}>
+              <p className="text-lg font-semibold">Future Value:</p>
+              <p className="text-3xl font-bold text-primary">${result.toLocaleString()}</p>
+              <p className="text-sm text-muted-foreground mt-2">
                 Total growth: ${(result - principal).toLocaleString()} ({((result / principal - 1) * 100).toFixed(2)}%)
               </p>
             </div>

@@ -3,7 +3,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
-import { theme } from "@/lib/theme"
 import { cn } from "@/lib/utils"
 
 const riskQuestions = [
@@ -80,14 +79,14 @@ export function RiskAssessment() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className={cn(theme.typography.fontSize.xl, theme.typography.fontFamily.sans)}>Risk Tolerance Assessment</CardTitle>
-        <CardDescription className={theme.typography.fontSize.base}>Evaluate your investment risk tolerance to determine your ideal portfolio allocation</CardDescription>
+        <CardTitle className="text-xl font-semibold">Risk Tolerance Assessment</CardTitle>
+        <CardDescription className="text-sm">Evaluate your investment risk tolerance to determine your ideal portfolio allocation</CardDescription>
       </CardHeader>
       <CardContent>
         {currentQuestion < riskQuestions.length ? (
           <div className="space-y-4">
-            <h3 className={cn(theme.typography.fontSize.lg, "font-semibold")}>Question {currentQuestion + 1} of {riskQuestions.length}</h3>
-            <p className={theme.typography.fontSize.base}>{riskQuestions[currentQuestion].question}</p>
+            <h3 className="text-lg font-semibold">Question {currentQuestion + 1} of {riskQuestions.length}</h3>
+            <p className="text-base">{riskQuestions[currentQuestion].question}</p>
             <RadioGroup 
               onValueChange={(value) => handleRiskAnswer(Number(value))}
               value={selectedAnswer?.toString()}
@@ -96,7 +95,7 @@ export function RiskAssessment() {
               {riskQuestions[currentQuestion].options.map((option, index) => (
                 <div key={index} className="flex items-center space-x-2 p-2 rounded-md border border-input hover:bg-accent hover:text-accent-foreground">
                   <RadioGroupItem value={option.value.toString()} id={`option-${index}`} className="border-primary" />
-                  <Label htmlFor={`option-${index}`} className={cn(theme.typography.fontSize.sm, "flex-grow cursor-pointer")}>{option.label}</Label>
+                  <Label htmlFor={`option-${index}`} className="text-sm flex-grow cursor-pointer">{option.label}</Label>
                 </div>
               ))}
             </RadioGroup>
@@ -110,10 +109,10 @@ export function RiskAssessment() {
           </div>
         ) : (
           <div className="text-center space-y-4">
-            <h3 className={cn(theme.typography.fontSize.xl, "font-semibold")}>Assessment Complete</h3>
-            <p className={cn(theme.typography.fontSize['3xl'], "font-bold text-primary")}>Your Risk Profile: {getRiskProfile(riskScore)}</p>
-            <p className={theme.typography.fontSize.lg}>Risk Score: {riskScore} out of {riskQuestions.length * 3}</p>
-            <div className={cn(theme.typography.fontSize.sm, "p-4 bg-muted rounded-lg text-muted-foreground")}>
+            <h3 className="text-xl font-semibold">Assessment Complete</h3>
+            <p className="text-3xl font-bold text-primary">Your Risk Profile: {getRiskProfile(riskScore)}</p>
+            <p className="text-lg">Risk Score: {riskScore} out of {riskQuestions.length * 3}</p>
+            <div className="text-sm p-4 bg-muted rounded-lg text-muted-foreground">
               <p><strong>Conservative (5-7):</strong> Focus on capital preservation with some growth.</p>
               <p><strong>Moderate (8-11):</strong> Balance between growth and capital preservation.</p>
               <p><strong>Growth (12-15):</strong> Emphasis on growth with moderate risk tolerance.</p>

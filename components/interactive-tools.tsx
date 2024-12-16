@@ -25,8 +25,8 @@ export function InteractiveTools() {
       </motion.h2>
       <Card className="bg-white/50 backdrop-blur-sm shadow-lg">
         <CardHeader>
-          <CardTitle className={cn(theme.typography.fontSize['2xl'], theme.typography.fontFamily.sans)}>Explore Our Tools</CardTitle>
-          <CardDescription className={theme.typography.fontSize.base}>
+          <CardTitle className="text-2xl font-semibold">Explore Our Tools</CardTitle>
+          <CardDescription className="text-sm">
             Use these interactive tools to gain insights into your financial decisions
           </CardDescription>
         </CardHeader>
