@@ -7,8 +7,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { InvestmentCalculator } from "./interactive-tools/investment-calculator"
 import { RiskAssessment } from "./interactive-tools/risk-assessment"
 import { MarketInsights } from "./interactive-tools/market-insights"
-import { theme } from "@/lib/theme"
-import { cn } from "@/lib/utils"
 
 export function InteractiveTools() {
   const [activeTab, setActiveTab] = useState("calculator")
@@ -16,7 +14,7 @@ export function InteractiveTools() {
   return (
     <section id="interactive-tools" className="container py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       <motion.h2 
-        className={cn("text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center", theme.typography.fontFamily.serif)}
+        className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -26,7 +24,7 @@ export function InteractiveTools() {
       <Card className="bg-white/50 backdrop-blur-sm shadow-lg">
         <CardHeader>
           <CardTitle className="text-2xl font-semibold">Explore Our Tools</CardTitle>
-          <CardDescription className="text-sm">
+          <CardDescription className="text-sm text-muted-foreground">
             Use these interactive tools to gain insights into your financial decisions
           </CardDescription>
         </CardHeader>
