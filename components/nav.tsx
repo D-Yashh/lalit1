@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, X } from 'lucide-react'
 import { Logo } from "@/components/ui/logo"
-import { theme } from "@/lib/theme"
 import { smoothScroll } from '@/lib/smooth-scroll'
 
 const links = [
@@ -63,10 +62,7 @@ export function Nav() {
               key={href}
               href={`#${href}`}
               onClick={(e) => handleClick(e, href)}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
-                theme.animation.default
-              )}
+              className="text-sm font-medium transition-colors hover:text-primary"
               role="menuitem"
             >
               {label}
@@ -86,10 +82,7 @@ export function Nav() {
                   key={href}
                   href={`#${href}`}
                   onClick={(e) => handleClick(e, href)}
-                  className={cn(
-                    "text-sm font-medium transition-colors hover:text-primary",
-                    theme.animation.default
-                  )}
+                  className="text-sm font-medium transition-colors hover:text-primary"
                   role="menuitem"
                 >
                   {label}

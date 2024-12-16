@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { AlertCircle } from 'lucide-react'
-import { cn } from "@/lib/utils"
 
 // Mock market data
 const marketData = [
@@ -64,8 +63,8 @@ export function MarketInsights() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-xl font-semibold">Market Insights</CardTitle>
-        <CardDescription className="text-sm">Interactive chart showing major index performance over time</CardDescription>
+        <CardTitle className="text-2xl font-semibold">Market Insights</CardTitle>
+        <CardDescription className="text-base">Major index performance over time</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="h-[400px]">
@@ -82,10 +81,10 @@ export function MarketInsights() {
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <div className="mt-4 text-center text-sm text-muted-foreground">
+        <p className="mt-4 text-center text-sm text-muted-foreground">
           This chart shows mock data for illustrative purposes only. 
           Real-world applications would use live market data from financial APIs.
-        </div>
+        </p>
       </CardContent>
     </Card>
   )
