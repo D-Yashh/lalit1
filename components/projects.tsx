@@ -3,10 +3,6 @@
 import { motion } from 'framer-motion'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { ArrowRight } from 'lucide-react'
-import { theme } from '@/lib/theme'
-import { cn } from '@/lib/utils'
 
 const projects = [
   {
@@ -48,7 +44,7 @@ export function Projects() {
   return (
     <section id="projects" className="container py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       <motion.h2 
-        className={cn("text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center", theme.typography.fontFamily.serif)}
+        className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -65,14 +61,14 @@ export function Projects() {
           >
             <Card className="h-full flex flex-col bg-white/50 backdrop-blur-sm shadow-lg">
               <CardHeader>
-                <CardTitle className={cn(theme.typography.fontSize.xl, theme.typography.fontFamily.sans)}>{project.title}</CardTitle>
-                <CardDescription className={theme.typography.fontSize.base}>{project.description}</CardDescription>
+                <CardTitle className="text-xl font-semibold">{project.title}</CardTitle>
+                <CardDescription className="text-base">{project.description}</CardDescription>
               </CardHeader>
               <CardContent className="flex-grow flex flex-col">
-                <h4 className={cn(theme.typography.fontSize.lg, "font-semibold mb-2")}>Key Achievements:</h4>
+                <h4 className="text-lg font-semibold mb-2">Key Achievements:</h4>
                 <ul className="list-disc pl-4 space-y-2 mb-4 flex-grow">
                   {project.achievements.map((achievement, j) => (
-                    <li key={j} className={cn(theme.typography.fontSize.sm, "text-muted-foreground")}>{achievement}</li>
+                    <li key={j} className="text-sm text-muted-foreground">{achievement}</li>
                   ))}
                 </ul>
                 <div className="flex flex-wrap gap-2 mt-auto">
